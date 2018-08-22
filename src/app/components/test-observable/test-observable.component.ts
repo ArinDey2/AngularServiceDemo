@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ObservableService } from '../../services/observable.service';
+import { Observable } from '../../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-test-observable',
@@ -9,11 +10,18 @@ import { ObservableService } from '../../services/observable.service';
 })
 export class TestObservableComponent implements OnInit {
 
+  myData: any;
+  observable: Observable<any>;
+
   constructor(private observableService: ObservableService) { }
 
   ngOnInit() {
-    this.observableService.test().subscribe(data =>
-    console.log(data));
-  }
+    this.observable = this.observableService.test();
+    this.observable.subscribe(this.performAction);
+      }
 
+  performAction(value) {
+    console.log(value);
+    this.myData = value;
+  }
 }
