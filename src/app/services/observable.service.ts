@@ -16,19 +16,19 @@ export class ObservableService {
         this.data = new Observable(observer => {
             setTimeout(() => {
                 observer.next(1);
-            }, 1000);
+            }, 5000);
 
             setTimeout(() => {
                 observer.next(2);
-            }, 2000);
+            }, 10000);
 
             setTimeout(() => {
                 observer.next(3);
-            }, 3000);
+            }, 15000);
 
             setTimeout(() => {
                 observer.next({ name: 'Amitabh' });
-            }, 4000);
+            }, 20000);
         });
 
         return this.data;
