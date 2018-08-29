@@ -19,7 +19,7 @@ export class ObservableUserService {
         // ];
     }
     getUsers(): Observable<any> {
-        return new Observable((observer) => {
+        return new Observable(observer => {
             setTimeout(() => {
                 this.users = [
                     { name: 'Amitabh Bachhan', city: 'Mumbai' },

@@ -9,7 +9,7 @@ import { Book } from '../../models/Book';
 })
 export class BookService {
 
-  booksUrl = 'http://localhost:8080/rest/books';
+  booksUrl = 'http://localhost:8080/RestTest/rest/books';
 
   constructor(private http: HttpClient) {
    }
